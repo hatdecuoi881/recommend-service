@@ -1,0 +1,21 @@
+# Loại bỏ các file và thư mục không cần thiết
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.git
+*.gitignore
+.env
+.DS_Store
+*.log
+*.tmp
+*.swp
+
+# Loại bỏ thư mục cụ thể (tùy chọn)
+node_modules
+.vscode
+.idea
+
+venv
+data

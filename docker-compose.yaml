@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  qdrant:
+    container_name: qdrant_demo_qdrant
+    image: qdrant/qdrant:v1.7.3
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - ./data/qdrant_storage:/qdrant/storage
+  recommend:
+    build:
+      context: .         # Chỉ định thư mục chứa Dockerfile
+    ports:
+      - "8000:8000"      # Map port 8000 trên máy chủ với port 8000 của container
+    environment:
+      - QDRANT_URL=http://qdrant:6333
